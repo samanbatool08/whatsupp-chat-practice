@@ -1,0 +1,13 @@
+.sidebar {
+    /* split screen width */
+    flex: 0.35; 
+}
+
+.sidebar__header {
+    /* put icons horizontal */
+    display: flex;
+    /* put space between them so not clumped together */
+    justify-content: space-between;
+    padding: 20px;
+    border-right: 1px solid lightgray;
+}
