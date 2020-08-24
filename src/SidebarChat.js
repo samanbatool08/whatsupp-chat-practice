@@ -11,6 +11,10 @@ function SidebarChat() {
         ))
     }, [])
 
+    // useEffect(() => {
+    //     setSeed(1234)
+    // }, [])
+    
     return (
         <div className='sidebarChat'>
             <Avatar src={`https://avatars.dicebear.com/api/human/${seed}.svg`}/>
