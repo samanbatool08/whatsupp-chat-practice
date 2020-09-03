@@ -1,10 +1,33 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { Avatar } from '@material-ui/core';
 import './Chat.css'
+import { SettingsEthernet, SentimentDissatisfied, SentimentDissatisfiedRounded } from '@material-ui/icons';
 
 function Chat() {
+    const [seed, setSeed] = useState('');
+
+    useEffect(() => {
+        setSeed(Math.floor(Math.random() * 500))
+    }, [])
+
     return (
         <div className='chat'>
+            <div className='chat__header'>
+                <Avatar src={`https://avatars.dicebear.com/api/human/${seed}.svg`}/>
+                    <div className='chat__headerInfo'>
+                        <h3>Room name</h3>
+                        <p>Last seen at...</p>
+                    </div>
             
+            </div>
+
+            <div className='chat__body'>
+
+            </div>
+
+            <div className='chat__footer'>
+
+            </div>
         </div>
     )
 }
