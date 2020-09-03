@@ -53,3 +53,15 @@
     /* space between messages */
     margin-bottom: 30px;
 }
+
+.chat__name {
+    position: absolute;
+    top: 0px;
+    font-weight: 800;
+    font-size: xx-small;
+}
+
+.chat__timestamp {
+    margin-left: 10px;
+    font-size: xx-small;
+}
