@@ -35,4 +35,21 @@
 .chat__body {
     flex: 1;
     background-image: url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png');
+    /* safe for huge screen size */
+    background-repeat: repeat;
+    background-position: center;
+    padding: 30px;
+    overflow: scroll;
+}
+
+.chat__message {
+    position: relative;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 10px;
+    /* scale for all message lengths */
+    width: fit-content;
+    background-color: #ffffff;
+    /* space between messages */
+    margin-bottom: 30px;
 }
