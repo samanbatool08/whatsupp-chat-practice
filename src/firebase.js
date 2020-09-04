@@ -1,3 +1,5 @@
+import firebase from 'firebase';
+
 const firebaseConfig = {
     apiKey: "AIzaSyC8BTxYdl2r9X4YpGItCYtrH4RZbzU3tbc",
     authDomain: "whatsupp-chat.firebaseapp.com",
@@ -9,4 +11,6 @@ const firebaseConfig = {
     measurementId: "G-2C0FELFS98"
   };
 
+  const firebaseApp = firebase.initializeApp(firebaseConfig);
+  const db = firebaseApp.firestore();
   

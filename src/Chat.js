@@ -16,6 +16,8 @@ function Chat() {
     function sendMessage(e) {
         e.preventDefault();
         console.log('you typed:', input)
+
+        setInput('');
     }
 
     return (
