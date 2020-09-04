@@ -87,4 +87,16 @@
 .chat__footer > form > input {
     flex: 1;
     border-radius: 30px;
+    padding: 10px;
+    border: none;
+}
+
+.chat__footer > form > button {
+    /* keep functionality of button, just hide it */
+    display: none;
+}
+
+.chat__footer > .MuiSvgIcon-root {
+    padding: 10px;
+    color: gray;
 }
