@@ -54,9 +54,14 @@
     margin-bottom: 30px;
 }
 
+.chat__receiver {
+    margin-left: auto;
+    background-color: #dcf8c6;
+}
+
 .chat__name {
     position: absolute;
-    top: 0px;
+    top: -15px;
     font-weight: 800;
     font-size: xx-small;
 }
@@ -65,3 +70,4 @@
     margin-left: 10px;
     font-size: xx-small;
 }
+
