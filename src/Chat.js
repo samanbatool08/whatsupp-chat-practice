@@ -5,11 +5,21 @@ import InsertEmoticonIcon from '@material-ui/icons/InsertEmoticon';
 import MicIcon from '@material-ui/icons/Mic';
 import './Chat.css';
 import { useParams } from 'react-router-dom';
+import db from 'firebase';
 
 function Chat() {
     const [seed, setSeed] = useState('');
     const [input, setInput] = useState('');
     const { roomId } = useParams();
+    const {roomName, setRoomName} = useState("");
+
+    useEffect(() => {
+        if(roomId) {
+            db.collection('rooms').doc(roomId).onSnapshot(snapshot => (
+                setRoomName(snapshot.data().name)
+            ))
+        }
+    }, [roomId])
 
     useEffect(() => {
         setSeed(Math.floor(Math.random() * 500))
