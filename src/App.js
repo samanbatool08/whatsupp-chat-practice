@@ -10,20 +10,18 @@ function App() {
 
      <div className='app__body'>
        <Router>
-      <Switch>
+            <Sidebar />
+        <Switch>
+          
+          <Route path='/rooms/:roomId'>
+            <Chat />
+          </Route>
+          <Route path='/'>
+            {/* <Chat /> */}
+          </Route>
+        </Switch>
 
-        <Route path='/app'>
-        <Sidebar />
-        <Chat />
-        </Route>
-
-   
-        <Route path='/'>
-          <h1>Home screen</h1>
-        </Route>
-           
-           </Switch>
-           </Router>
+      </Router>
      </div>
     </div>
   );
