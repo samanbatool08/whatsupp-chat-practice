@@ -38,7 +38,7 @@ function SidebarChat({ id, name, addNewChat }) {
                 <p>Last message...</p>
             </div>
         </div>
-        // </Link>
+        // </Link> 
     ) : (
         <div onClick={createChat}
             className='sidebarChat'>
