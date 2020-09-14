@@ -11,11 +11,16 @@ function App() {
      <div className='app__body'>
        <Router>
          <Switch>
-           <Route path='/'>
-             <h1>hitting home screen</h1>
-           </Route>
-          <Sidebar />
+           <Sidebar />
+
+           <Route path='/rooms/:roomId'>
            <Chat />
+           </Route>
+
+           <Route path='/'>
+           <Chat />
+           </Route>
+           
         </Switch>
 
 
