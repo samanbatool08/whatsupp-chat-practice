@@ -11,7 +11,7 @@ import db from './firebase.js';
 function Chat() {
     const [seed, setSeed] = useState('');
     const [input, setInput] = useState('');
-    const {roomName, setRoomName} = useState("");
+    const [roomName, setRoomName ] = useState("");
     const { roomId } = useParams();
 
     useEffect(() => {
