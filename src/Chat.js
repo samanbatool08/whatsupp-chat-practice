@@ -7,7 +7,7 @@ import './Chat.css';
 import { useParams } from 'react-router-dom';
 import db from './firebase.js';
 import { useStateValue } from './StateProvider.js';
-import firebase from './firebase.js'
+import firebase from 'firebase';
 
 
 function Chat() {
