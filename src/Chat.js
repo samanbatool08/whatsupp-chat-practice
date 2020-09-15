@@ -11,15 +11,19 @@ import db from './firebase.js';
 function Chat() {
     const [seed, setSeed] = useState('');
     const [input, setInput] = useState('');
-    const [roomName, setRoomName ] = useState("");
+    const [roomName, setRoomName] = useState("");
+    const [messages, setMessages] = useState("");
     // retrieving from url 
     const { roomId } = useParams();
 
     useEffect(() => {
         if (roomId) {
-            db.collection('rooms').doc(roomId).onSnapshot(snapshot => (
-                setRoomName(snapshot.data().name)
-            ))
+            db.collection('rooms').doc(roomId).onSnapshot((snapshot) => 
+                setRoomName(snapshot.data().name));
+
+                db.collection('rooms').doc(roomId).collection('messages').orderBy('timestamp', 'asc').onSnapshot(snapshot => (
+                    setMessages(snapshot.docs.map(doc => doc.data()))
+                ))
         }
     }, [roomId])
 
@@ -65,11 +69,16 @@ function Chat() {
             </div>
 
             <div className='chat__body'>
+                {messages && messages.map(message => (
+
                 <p className={`chat__message ${true && 'chat__receiver'}`}>
-                    <span className='chat__name'>Saman Batool</span>
-                    Hey guys!!
-                    <span className='chat__timestamp'>3:50pm</span>
+                    <span className='chat__name'>{message.name}</span>
+                    {message.message}
+                    <span className='chat__timestamp'>
+                        {new Date(message.timestamp?.toDate()).toUTCString()}
+                        </span>
                 </p>
+                ))}
                 
             </div>
 
