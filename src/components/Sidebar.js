@@ -6,10 +6,8 @@ import ChatIcon from '@material-ui/icons/Chat';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import  { SearchOutlined } from '@material-ui/icons';
 import db from './firebase.js';
-import { useStateValue } from './StateProvider.js';
-
-
-import './Sidebar.css'
+import { useStateValue } from '../StateProvider.js';
+import '../css/Sidebar.css'
 
 function Sidebar() {
 

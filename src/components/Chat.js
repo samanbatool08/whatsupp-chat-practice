@@ -3,10 +3,10 @@ import { Avatar, IconButton, Input } from '@material-ui/core';
 import { AttachFile, MoreVert, SearchOutlined  } from '@material-ui/icons';
 import InsertEmoticonIcon from '@material-ui/icons/InsertEmoticon';
 import MicIcon from '@material-ui/icons/Mic';
-import './Chat.css';
+import '../css/Chat.css';
 import { useParams } from 'react-router-dom';
 import db from './firebase.js';
-import { useStateValue } from './StateProvider.js';
+import { useStateValue } from '../StateProvider.js';
 import firebase from 'firebase';
 
 
