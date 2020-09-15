@@ -12,7 +12,7 @@ function Login() {
         <div className='login'>
             <div className='login__container'>
                 <img 
-                    src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/WhatsApp_logo-color-vertical.svg/1200px-WhatsApp_logo-color-vertical.svg.png'
+                    src='https://logodownload.org/wp-content/uploads/2015/04/whatsapp-logo-1-1.png'
                     alt=''
                     />
                 <div className='login__text'>
