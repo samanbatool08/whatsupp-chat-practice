@@ -1,5 +1,6 @@
 import firebase from 'firebase';
 
+
 const firebaseConfig = {
     apiKey: "AIzaSyC8BTxYdl2r9X4YpGItCYtrH4RZbzU3tbc",
     authDomain: "whatsupp-chat.firebaseapp.com",
@@ -17,5 +18,5 @@ const firebaseConfig = {
 
   const provider = new firebase.auth.GoogleAuthProvider();
 
-  export { auth, provider };
+  export { db, auth, provider };
   export default db; 
