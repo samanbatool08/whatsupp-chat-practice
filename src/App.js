@@ -3,7 +3,7 @@ import './App.css';
 import Sidebar from './Sidebar'
 import Chat from './Chat';
 import Login from './Login';
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 function App() {
 

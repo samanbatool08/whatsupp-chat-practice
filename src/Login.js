@@ -2,15 +2,25 @@ import React from 'react';
 import { Button } from '@material-ui/core';
 import './Login.css';
 import { auth, provider } from './firebase';
+import { useStateValue } from './StateProvider.js';
+import { actionTypes } from './reducer';
+
 
 function Login() {
+
+    const[{}, dispatch] = useStateValue();
 
     function signIn() {
             // sign in functionality 
             // firebase auth setup enable with google
             auth
                 .signInWithPopup(provider)
-                .then((result) => console.log(result))
+                .then((result) => {
+                    dispatch({
+                        type: actionTypes.SET_USER,
+                        user: result.user,
+                    })
+                })
                 .catch((error) => alert(error.message))
     } 
 
@@ -22,7 +32,7 @@ function Login() {
                     alt=''
                     />
                 <div className='login__text'>
-                    <h1>Sign in to WHatsApp</h1>
+                    <h1>Sign in to WhatsApp</h1>
                 </div>
 
                 <Button type='submit' onClick={signIn}>

@@ -1,4 +1,4 @@
-export const initialSate = { 
+export const initialState = { 
     user: null }
 
 export const actionTypes = {
