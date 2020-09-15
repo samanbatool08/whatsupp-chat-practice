@@ -6,7 +6,8 @@ import { auth, provider } from './firebase';
 function Login() {
 
     function signIn() {
-            // sign in functionality
+            // sign in functionality 
+            // firebase auth setup enable with google
             auth
                 .signInWithPopup(provider)
                 .then((result) => console.log(result))
