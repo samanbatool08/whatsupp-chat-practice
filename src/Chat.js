@@ -6,6 +6,8 @@ import MicIcon from '@material-ui/icons/Mic';
 import './Chat.css';
 import { useParams } from 'react-router-dom';
 import db from './firebase.js';
+import { useStateValue } from './StateProvider.js';
+import firebase from './firebase.js'
 
 
 function Chat() {
@@ -13,6 +15,7 @@ function Chat() {
     const [input, setInput] = useState('');
     const [roomName, setRoomName] = useState("");
     const [messages, setMessages] = useState("");
+    const [{ user }, dispatch] = useStateValue();
     // retrieving from url 
     const { roomId } = useParams();
 
@@ -43,6 +46,12 @@ function Chat() {
         e.preventDefault();
         console.log('you typed:', input)
 
+        db.collection('rooms').doc(roomId).collection('messages').add({
+            message: input,
+            name: user.displayName,
+            timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+
+        })
         setInput('');
     }
 
