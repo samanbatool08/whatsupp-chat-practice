@@ -12,6 +12,7 @@ function Chat() {
     const [seed, setSeed] = useState('');
     const [input, setInput] = useState('');
     const [roomName, setRoomName ] = useState("");
+    // retrieving from url 
     const { roomId } = useParams();
 
     useEffect(() => {
@@ -32,7 +33,7 @@ function Chat() {
 
     useEffect(() => {
         setSeed(Math.floor(Math.random() * 500))
-    }, [])
+    }, [roomId])
 
     function sendMessage(e) {
         e.preventDefault();
